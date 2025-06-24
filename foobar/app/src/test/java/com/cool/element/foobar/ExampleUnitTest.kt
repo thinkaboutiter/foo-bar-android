@@ -1,4 +1,4 @@
-package com.cool.element.foo_bar
+package com.cool.element.foobar
 
 import org.junit.Test
 

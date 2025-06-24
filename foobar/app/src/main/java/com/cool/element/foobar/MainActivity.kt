@@ -1,4 +1,4 @@
-package com.cool.element.foo_bar
+package com.cool.element.foobar
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.cool.element.foo_bar.ui.theme.FoobarTheme
+import com.cool.element.foobar.presentation.theme.FoobarTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

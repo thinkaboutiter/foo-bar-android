@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.cool.element.foo_bar"
+    namespace = "com.cool.element.foobar"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.cool.element.foo_bar"
+        applicationId = "com.cool.element.foobar"
         minSdk = 35
         targetSdk = 35
         versionCode = 1

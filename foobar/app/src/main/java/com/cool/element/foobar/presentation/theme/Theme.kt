@@ -1,4 +1,4 @@
-package com.cool.element.foo_bar.ui.theme
+package com.cool.element.foobar.presentation.theme
 
 import android.app.Activity
 import android.os.Build
