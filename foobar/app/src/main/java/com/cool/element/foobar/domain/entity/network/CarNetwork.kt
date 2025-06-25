@@ -1,4 +1,4 @@
-package com.cool.element.foobar.domain.entity
+package com.cool.element.foobar.domain.entity.network
 
 import com.google.gson.annotations.SerializedName
 
