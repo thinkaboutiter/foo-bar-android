@@ -2,13 +2,11 @@ package com.cool.element.foobar.presentation.view.carlistview
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -28,6 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 fun CarListView(
+    modifier: Modifier = Modifier,
     context: Context = LocalContext.current
 ) {
     val factory = remember { CarListViewModelFactory(context) }
@@ -52,7 +51,7 @@ fun CarListView(
 
     // UI
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .padding(16.dp)
     ) {
