@@ -4,12 +4,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import android.content.Context
 import com.cool.element.foobar.domain.entity.application.CarApp
@@ -79,7 +77,7 @@ fun CarListView(
             else -> {
                 LazyColumn {
                     items(cars) { car ->
-                        CarItem(car = car)
+                        CarRowView(car = car)
                     }
                 }
             }
@@ -87,26 +85,28 @@ fun CarListView(
     }
 }
 
+@Preview(showBackground = true)
 @Composable
-fun CarItem(car: CarApp) {
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp)
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                text = car.title,
-                style = MaterialTheme.typography.headlineSmall
-            )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(
-                text = car.details,
-                style = MaterialTheme.typography.bodyMedium
-            )
-            // You could add AsyncImage here for car.imageUrlString
+fun CarListViewPreview() {
+    val sampleCars = listOf(
+        CarApp(
+            title = "Tesla Model S",
+            aboutUrlString = "https://tesla.com/models",
+            details = "Electric sedan with long range.",
+            imageUrlString = ""
+        ),
+        CarApp(
+            title = "BMW i4",
+            aboutUrlString = "https://bmw.com/i4",
+            details = "Sporty electric Gran Coupé.",
+            imageUrlString = ""
+        )
+    )
+    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+        LazyColumn {
+            items(sampleCars) { car ->
+                CarRowView(car = car)
+            }
         }
     }
 }
