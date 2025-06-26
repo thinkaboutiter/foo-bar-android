@@ -3,5 +3,5 @@ import com.cool.element.foobar.domain.entity.application.CarApp
 
 interface CarRepositoryI {
     @Throws(Exception::class)
-    suspend fun getCars(): List<CarApp>
+    suspend fun fetchCars(): List<CarApp>
 }

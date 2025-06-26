@@ -10,7 +10,7 @@ class CarRepository(
 ): CarRepositoryI {
 
     @Throws(Exception::class)
-    override suspend fun getCars(): List<CarApp> {
+    override suspend fun fetchCars(): List<CarApp> {
         val result = datasourceI.fetchCars().map { carNetwork ->
             CarApp.from(carNetwork)
         }
