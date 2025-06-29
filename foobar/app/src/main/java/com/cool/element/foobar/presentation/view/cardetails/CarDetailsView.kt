@@ -44,10 +44,10 @@ fun CarDetailsView(
 fun CarDetailsViewPreview() {
     CarDetailsView(
         car = CarApp(
-            title = "Tesla Model S",
-            aboutUrlString = "https://tesla.com/models",
-            details = "Electric sedan with long range.",
-            imageUrlString = ""
+            title = "Toyota Corolla",
+            aboutUrlString = "https://example.com/car-models/toyota-corolla",
+            details = "The Toyota Corolla is a compact car that has been popular for decades due to its reliability and fuel efficiency.",
+            imageUrlString = "https://example.com/thumbnails/toyota-corolla.jpg"
         )
     )
 }
