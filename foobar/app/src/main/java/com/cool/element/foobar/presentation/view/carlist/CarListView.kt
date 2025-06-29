@@ -1,4 +1,4 @@
-package com.cool.element.foobar.presentation.view.carlistview
+package com.cool.element.foobar.presentation.view.carlist
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,13 +23,15 @@ import androidx.compose.ui.unit.dp
 import android.content.Context
 import com.cool.element.foobar.domain.entity.application.CarApp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
+import com.cool.element.foobar.presentation.view.carlist.viewmodel.MockCarListViewModelFactory
 
 @Composable
 fun CarListView(
     modifier: Modifier = Modifier,
     context: Context = LocalContext.current
 ) {
-    val factory = remember { CarListViewModelFactory(context) }
+    val factory = remember { MockCarListViewModelFactory(context) }
     val viewModel: CarListViewModel = viewModel(factory = factory)
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }

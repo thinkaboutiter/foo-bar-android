@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "com.cool.element.foobar"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.cool.element.foobar"
         minSdk = 35
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -59,4 +59,5 @@ dependencies {
 
     implementation(libs.gson)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.coil.compose)
 }

@@ -1,4 +1,4 @@
-package com.cool.element.foobar.presentation.view.carlistview
+package com.cool.element.foobar.presentation.view.carlist
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

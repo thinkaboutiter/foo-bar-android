@@ -1,6 +1,5 @@
 package com.cool.element.foobar.data.repository
 
-import android.content.Context
 import com.cool.element.foobar.data.datasource.CarDatasourceI
 import com.cool.element.foobar.domain.entity.application.CarApp
 import kotlin.jvm.Throws
