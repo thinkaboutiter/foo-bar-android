@@ -56,6 +56,540 @@
             "href": "https://example.com/car-models/audi-q5",
             "description": "The Audi Q5 is a luxury compact SUV known for its elegant design, upscale interior, and strong performance.",
             "thumbnail": "https://example.com/thumbnails/audi-q5.jpg"
+        },
+        {
+            "title": "Volkswagen Golf",
+            "href": "https://example.com/car-models/volkswagen-golf",
+            "description": "The Volkswagen Golf is a compact hatchback known for its European engineering and refined driving experience.",
+            "thumbnail": "https://example.com/thumbnails/volkswagen-golf.jpg"
+        },
+        {
+            "title": "Mazda CX-5",
+            "href": "https://example.com/car-models/mazda-cx5",
+            "description": "The Mazda CX-5 is a compact SUV known for its sporty handling and premium interior quality.",
+            "thumbnail": "https://example.com/thumbnails/mazda-cx5.jpg"
+        },
+        {
+            "title": "Subaru Outback",
+            "href": "https://example.com/car-models/subaru-outback",
+            "description": "The Subaru Outback is a versatile crossover wagon known for its all-wheel drive capability and outdoor-friendly design.",
+            "thumbnail": "https://example.com/thumbnails/subaru-outback.jpg"
+        },
+        {
+            "title": "Porsche 911",
+            "href": "https://example.com/car-models/porsche-911",
+            "description": "The Porsche 911 is an iconic sports car known for its distinctive design and exceptional performance.",
+            "thumbnail": "https://example.com/thumbnails/porsche-911.jpg"
+        },
+        {
+            "title": "Range Rover Sport",
+            "href": "https://example.com/car-models/range-rover-sport",
+            "description": "The Range Rover Sport is a luxury SUV known for its off-road capability and premium interior.",
+            "thumbnail": "https://example.com/thumbnails/range-rover-sport.jpg"
+        },
+        {
+            "title": "Nissan Altima",
+            "href": "https://example.com/car-models/nissan-altima",
+            "description": "The Nissan Altima is a midsize sedan known for its comfortable ride and advanced safety features.",
+            "thumbnail": "https://example.com/thumbnails/nissan-altima.jpg"
+        },
+        {
+            "title": "Lexus RX",
+            "href": "https://example.com/car-models/lexus-rx",
+            "description": "The Lexus RX is a luxury midsize SUV known for its reliability and comfortable interior.",
+            "thumbnail": "https://example.com/thumbnails/lexus-rx.jpg"
+        },
+        {
+            "title": "Hyundai Elantra",
+            "href": "https://example.com/car-models/hyundai-elantra",
+            "description": "The Hyundai Elantra is a compact sedan known for its value, warranty, and modern features.",
+            "thumbnail": "https://example.com/thumbnails/hyundai-elantra.jpg"
+        },
+        {
+            "title": "Kia Sorento",
+            "href": "https://example.com/car-models/kia-sorento",
+            "description": "The Kia Sorento is a midsize SUV known for its spacious interior and excellent warranty coverage.",
+            "thumbnail": "https://example.com/thumbnails/kia-sorento.jpg"
+        },
+        {
+            "title": "Cadillac Escalade",
+            "href": "https://example.com/car-models/cadillac-escalade",
+            "description": "The Cadillac Escalade is a full-size luxury SUV known for its commanding presence and premium amenities.",
+            "thumbnail": "https://example.com/thumbnails/cadillac-escalade.jpg"
+        },
+        {
+            "title": "Genesis G90",
+            "href": "https://example.com/car-models/genesis-g90",
+            "description": "The Genesis G90 is a luxury full-size sedan known for its refined interior and smooth ride quality.",
+            "thumbnail": "https://example.com/thumbnails/genesis-g90.jpg"
+        },
+        {
+            "title": "Volvo XC90",
+            "href": "https://example.com/car-models/volvo-xc90",
+            "description": "The Volvo XC90 is a luxury SUV known for its advanced safety features and Scandinavian design.",
+            "thumbnail": "https://example.com/thumbnails/volvo-xc90.jpg"
+        },
+        {
+            "title": "Jaguar F-Type",
+            "href": "https://example.com/car-models/jaguar-f-type",
+            "description": "The Jaguar F-Type is a luxury sports car known for its stunning design and powerful performance.",
+            "thumbnail": "https://example.com/thumbnails/jaguar-f-type.jpg"
+        },
+        {
+            "title": "Acura MDX",
+            "href": "https://example.com/car-models/acura-mdx",
+            "description": "The Acura MDX is a luxury midsize SUV known for its reliability and spacious three-row seating.",
+            "thumbnail": "https://example.com/thumbnails/acura-mdx.jpg"
+        },
+        {
+            "title": "Infiniti Q50",
+            "href": "https://example.com/car-models/infiniti-q50",
+            "description": "The Infiniti Q50 is a luxury compact sedan known for its sporty performance and upscale interior.",
+            "thumbnail": "https://example.com/thumbnails/infiniti-q50.jpg"
+        },
+        {
+            "title": "Lincoln Navigator",
+            "href": "https://example.com/car-models/lincoln-navigator",
+            "description": "The Lincoln Navigator is a full-size luxury SUV known for its spacious interior and premium features.",
+            "thumbnail": "https://example.com/thumbnails/lincoln-navigator.jpg"
+        },
+        {
+            "title": "Tesla Model 3",
+            "href": "https://example.com/car-models/tesla-model-3",
+            "description": "The Tesla Model 3 is an all-electric sedan known for its minimalist interior and advanced autopilot features.",
+            "thumbnail": "https://example.com/thumbnails/tesla-model-3.jpg"
+        },
+        {
+            "title": "Chevrolet Suburban",
+            "href": "https://example.com/car-models/chevrolet-suburban",
+            "description": "The Chevrolet Suburban is a full-size SUV known for its maximum seating capacity and towing capability.",
+            "thumbnail": "https://example.com/thumbnails/chevrolet-suburban.jpg"
+        },
+        {
+            "title": "Ford Mustang",
+            "href": "https://example.com/car-models/ford-mustang",
+            "description": "The Ford Mustang is an iconic American muscle car known for its aggressive styling and powerful engines.",
+            "thumbnail": "https://example.com/thumbnails/ford-mustang.jpg"
+        },
+        {
+            "title": "Toyota Prius",
+            "href": "https://example.com/car-models/toyota-prius",
+            "description": "The Toyota Prius is a hybrid sedan known for its excellent fuel economy and environmental friendliness.",
+            "thumbnail": "https://example.com/thumbnails/toyota-prius.jpg"
+        },
+        {
+            "title": "Honda Accord",
+            "href": "https://example.com/car-models/honda-accord",
+            "description": "The Honda Accord is a midsize sedan known for its reliability, spacious interior, and strong resale value.",
+            "thumbnail": "https://example.com/thumbnails/honda-accord.jpg"
+        },
+        {
+            "title": "BMW X5",
+            "href": "https://example.com/car-models/bmw-x5",
+            "description": "The BMW X5 is a luxury midsize SUV known for its sporty handling and premium interior features.",
+            "thumbnail": "https://example.com/thumbnails/bmw-x5.jpg"
+        },
+        {
+            "title": "Mercedes-Benz C-Class",
+            "href": "https://example.com/car-models/mercedes-c-class",
+            "description": "The Mercedes-Benz C-Class is a luxury compact sedan known for its elegant design and advanced technology.",
+            "thumbnail": "https://example.com/thumbnails/mercedes-c-class.jpg"
+        },
+        {
+            "title": "Audi A4",
+            "href": "https://example.com/car-models/audi-a4",
+            "description": "The Audi A4 is a luxury compact sedan known for its refined interior and quattro all-wheel drive system.",
+            "thumbnail": "https://example.com/thumbnails/audi-a4.jpg"
+        },
+        {
+            "title": "Jeep Grand Cherokee",
+            "href": "https://example.com/car-models/jeep-grand-cherokee",
+            "description": "The Jeep Grand Cherokee is a midsize SUV known for its off-road capability and comfortable on-road manners.",
+            "thumbnail": "https://example.com/thumbnails/jeep-grand-cherokee.jpg"
+        },
+        {
+            "title": "Toyota RAV4",
+            "href": "https://example.com/car-models/toyota-rav4",
+            "description": "The Toyota RAV4 is a compact SUV known for its reliability, fuel efficiency, and standard all-wheel drive.",
+            "thumbnail": "https://example.com/thumbnails/toyota-rav4.jpg"
+        },
+        {
+            "title": "Chevrolet Silverado",
+            "href": "https://example.com/car-models/chevrolet-silverado",
+            "description": "The Chevrolet Silverado is a full-size pickup truck known for its towing capacity and rugged construction.",
+            "thumbnail": "https://example.com/thumbnails/chevrolet-silverado.jpg"
+        },
+        {
+            "title": "Honda CR-V",
+            "href": "https://example.com/car-models/honda-cr-v",
+            "description": "The Honda CR-V is a compact SUV known for its practicality, reliability, and excellent resale value.",
+            "thumbnail": "https://example.com/thumbnails/honda-cr-v.jpg"
+        },
+        {
+            "title": "Ford Explorer",
+            "href": "https://example.com/car-models/ford-explorer",
+            "description": "The Ford Explorer is a midsize SUV known for its three-row seating and family-friendly features.",
+            "thumbnail": "https://example.com/thumbnails/ford-explorer.jpg"
+        },
+        {
+            "title": "Nissan Sentra",
+            "href": "https://example.com/car-models/nissan-sentra",
+            "description": "The Nissan Sentra is a compact sedan known for its affordability and fuel efficiency.",
+            "thumbnail": "https://example.com/thumbnails/nissan-sentra.jpg"
+        },
+        {
+            "title": "Mazda Mazda3",
+            "href": "https://example.com/car-models/mazda-mazda3",
+            "description": "The Mazda Mazda3 is a compact car known for its sporty handling and upscale interior.",
+            "thumbnail": "https://example.com/thumbnails/mazda-mazda3.jpg"
+        },
+        {
+            "title": "Subaru Impreza",
+            "href": "https://example.com/car-models/subaru-impreza",
+            "description": "The Subaru Impreza is a compact car known for its standard all-wheel drive and good safety ratings.",
+            "thumbnail": "https://example.com/thumbnails/subaru-impreza.jpg"
+        },
+        {
+            "title": "Volkswagen Jetta",
+            "href": "https://example.com/car-models/volkswagen-jetta",
+            "description": "The Volkswagen Jetta is a compact sedan known for its European refinement and spacious interior.",
+            "thumbnail": "https://example.com/thumbnails/volkswagen-jetta.jpg"
+        },
+        {
+            "title": "Hyundai Tucson",
+            "href": "https://example.com/car-models/hyundai-tucson",
+            "description": "The Hyundai Tucson is a compact SUV known for its value, warranty coverage, and modern design.",
+            "thumbnail": "https://example.com/thumbnails/hyundai-tucson.jpg"
+        },
+        {
+            "title": "Kia Sportage",
+            "href": "https://example.com/car-models/kia-sportage",
+            "description": "The Kia Sportage is a compact SUV known for its attractive styling and comprehensive warranty.",
+            "thumbnail": "https://example.com/thumbnails/kia-sportage.jpg"
+        },
+        {
+            "title": "Buick Enclave",
+            "href": "https://example.com/car-models/buick-enclave",
+            "description": "The Buick Enclave is a midsize SUV known for its quiet cabin and comfortable ride quality.",
+            "thumbnail": "https://example.com/thumbnails/buick-enclave.jpg"
+        },
+        {
+            "title": "GMC Sierra",
+            "href": "https://example.com/car-models/gmc-sierra",
+            "description": "The GMC Sierra is a full-size pickup truck known for its premium interior and advanced towing features.",
+            "thumbnail": "https://example.com/thumbnails/gmc-sierra.jpg"
+        },
+        {
+            "title": "Chrysler 300",
+            "href": "https://example.com/car-models/chrysler-300",
+            "description": "The Chrysler 300 is a full-size sedan known for its bold styling and spacious interior.",
+            "thumbnail": "https://example.com/thumbnails/chrysler-300.jpg"
+        },
+        {
+            "title": "Dodge Charger",
+            "href": "https://example.com/car-models/dodge-charger",
+            "description": "The Dodge Charger is a full-size sedan known for its powerful engine options and aggressive styling.",
+            "thumbnail": "https://example.com/thumbnails/dodge-charger.jpg"
+        },
+        {
+            "title": "Ram 1500",
+            "href": "https://example.com/car-models/ram-1500",
+            "description": "The Ram 1500 is a full-size pickup truck known for its smooth ride and luxurious interior options.",
+            "thumbnail": "https://example.com/thumbnails/ram-1500.jpg"
+        },
+        {
+            "title": "Tesla Model Y",
+            "href": "https://example.com/car-models/tesla-model-y",
+            "description": "The Tesla Model Y is an all-electric crossover known for its performance and advanced technology features.",
+            "thumbnail": "https://example.com/thumbnails/tesla-model-y.jpg"
+        },
+        {
+            "title": "Lexus ES",
+            "href": "https://example.com/car-models/lexus-es",
+            "description": "The Lexus ES is a luxury midsize sedan known for its reliability and comfortable ride.",
+            "thumbnail": "https://example.com/thumbnails/lexus-es.jpg"
+        },
+        {
+            "title": "Acura TLX",
+            "href": "https://example.com/car-models/acura-tlx",
+            "description": "The Acura TLX is a luxury compact sedan known for its sporty handling and advanced safety features.",
+            "thumbnail": "https://example.com/thumbnails/acura-tlx.jpg"
+        },
+        {
+            "title": "Infiniti QX60",
+            "href": "https://example.com/car-models/infiniti-qx60",
+            "description": "The Infiniti QX60 is a luxury midsize SUV known for its comfortable ride and family-friendly features.",
+            "thumbnail": "https://example.com/thumbnails/infiniti-qx60.jpg"
+        },
+        {
+            "title": "Volvo S60",
+            "href": "https://example.com/car-models/volvo-s60",
+            "description": "The Volvo S60 is a luxury compact sedan known for its safety features and Scandinavian design.",
+            "thumbnail": "https://example.com/thumbnails/volvo-s60.jpg"
+        },
+        {
+            "title": "Jaguar XE",
+            "href": "https://example.com/car-models/jaguar-xe",
+            "description": "The Jaguar XE is a luxury compact sedan known for its sporty handling and elegant British design.",
+            "thumbnail": "https://example.com/thumbnails/jaguar-xe.jpg"
+        },
+        {
+            "title": "Land Rover Discovery",
+            "href": "https://example.com/car-models/land-rover-discovery",
+            "description": "The Land Rover Discovery is a luxury SUV known for its exceptional off-road capability and versatile interior.",
+            "thumbnail": "https://example.com/thumbnails/land-rover-discovery.jpg"
+        },
+        {
+            "title": "Porsche Cayenne",
+            "href": "https://example.com/car-models/porsche-cayenne",
+            "description": "The Porsche Cayenne is a luxury SUV known for its sports car-like performance and premium interior.",
+            "thumbnail": "https://example.com/thumbnails/porsche-cayenne.jpg"
+        },
+        {
+            "title": "Maserati Ghibli",
+            "href": "https://example.com/car-models/maserati-ghibli",
+            "description": "The Maserati Ghibli is a luxury sedan known for its Italian styling and distinctive exhaust note.",
+            "thumbnail": "https://example.com/thumbnails/maserati-ghibli.jpg"
+        },
+        {
+            "title": "Alfa Romeo Giulia",
+            "href": "https://example.com/car-models/alfa-romeo-giulia",
+            "description": "The Alfa Romeo Giulia is a luxury sedan known for its sporty performance and Italian design flair.",
+            "thumbnail": "https://example.com/thumbnails/alfa-romeo-giulia.jpg"
+        },
+        {
+            "title": "Bentley Continental GT",
+            "href": "https://example.com/car-models/bentley-continental-gt",
+            "description": "The Bentley Continental GT is a luxury grand tourer known for its handcrafted interior and powerful performance.",
+            "thumbnail": "https://example.com/thumbnails/bentley-continental-gt.jpg"
+        },
+        {
+            "title": "Rolls-Royce Ghost",
+            "href": "https://example.com/car-models/rolls-royce-ghost",
+            "description": "The Rolls-Royce Ghost is an ultra-luxury sedan known for its whisper-quiet cabin and supreme comfort.",
+            "thumbnail": "https://example.com/thumbnails/rolls-royce-ghost.jpg"
+        },
+        {
+            "title": "Ferrari 488 GTB",
+            "href": "https://example.com/car-models/ferrari-488-gtb",
+            "description": "The Ferrari 488 GTB is an exotic sports car known for its stunning performance and Italian craftsmanship.",
+            "thumbnail": "https://example.com/thumbnails/ferrari-488-gtb.jpg"
+        },
+        {
+            "title": "Lamborghini Huracán",
+            "href": "https://example.com/car-models/lamborghini-huracan",
+            "description": "The Lamborghini Huracán is an exotic supercar known for its dramatic styling and blistering performance.",
+            "thumbnail": "https://example.com/thumbnails/lamborghini-huracan.jpg"
+        },
+        {
+            "title": "McLaren 720S",
+            "href": "https://example.com/car-models/mclaren-720s",
+            "description": "The McLaren 720S is a high-performance supercar known for its advanced aerodynamics and track-focused design.",
+            "thumbnail": "https://example.com/thumbnails/mclaren-720s.jpg"
+        },
+        {
+            "title": "Aston Martin DB11",
+            "href": "https://example.com/car-models/aston-martin-db11",
+            "description": "The Aston Martin DB11 is a luxury grand tourer known for its elegant British design and powerful performance.",
+            "thumbnail": "https://example.com/thumbnails/aston-martin-db11.jpg"
+        },
+        {
+            "title": "Bugatti Chiron",
+            "href": "https://example.com/car-models/bugatti-chiron",
+            "description": "The Bugatti Chiron is an ultra-exclusive hypercar known for its record-breaking speed and luxury craftsmanship.",
+            "thumbnail": "https://example.com/thumbnails/bugatti-chiron.jpg"
+        },
+        {
+            "title": "Koenigsegg Regera",
+            "href": "https://example.com/car-models/koenigsegg-regera",
+            "description": "The Koenigsegg Regera is a Swedish hypercar known for its innovative hybrid drivetrain and extreme performance.",
+            "thumbnail": "https://example.com/thumbnails/koenigsegg-regera.jpg"
+        },
+        {
+            "title": "Pagani Huayra",
+            "href": "https://example.com/car-models/pagani-huayra",
+            "description": "The Pagani Huayra is an artisanal hypercar known for its exquisite craftsmanship and aerodynamic excellence.",
+            "thumbnail": "https://example.com/thumbnails/pagani-huayra.jpg"
+        },
+        {
+            "title": "Toyota Camry",
+            "href": "https://example.com/car-models/toyota-camry",
+            "description": "The Toyota Camry is a midsize sedan known for its reliability, fuel efficiency, and family-friendly features.",
+            "thumbnail": "https://example.com/thumbnails/toyota-camry.jpg"
+        },
+        {
+            "title": "Nissan Rogue",
+            "href": "https://example.com/car-models/nissan-rogue",
+            "description": "The Nissan Rogue is a compact SUV known for its spacious interior and family-oriented features.",
+            "thumbnail": "https://example.com/thumbnails/nissan-rogue.jpg"
+        },
+        {
+            "title": "Ford Escape",
+            "href": "https://example.com/car-models/ford-escape",
+            "description": "The Ford Escape is a compact SUV known for its fuel efficiency and user-friendly technology.",
+            "thumbnail": "https://example.com/thumbnails/ford-escape.jpg"
+        },
+        {
+            "title": "Chevrolet Equinox",
+            "href": "https://example.com/car-models/chevrolet-equinox",
+            "description": "The Chevrolet Equinox is a compact SUV known for its spacious cargo area and comfortable ride.",
+            "thumbnail": "https://example.com/thumbnails/chevrolet-equinox.jpg"
+        },
+        {
+            "title": "Honda Pilot",
+            "href": "https://example.com/car-models/honda-pilot",
+            "description": "The Honda Pilot is a midsize SUV known for its three-row seating and strong reliability record.",
+            "thumbnail": "https://example.com/thumbnails/honda-pilot.jpg"
+        },
+        {
+            "title": "Toyota Highlander",
+            "href": "https://example.com/car-models/toyota-highlander",
+            "description": "The Toyota Highlander is a midsize SUV known for its reliability and family-friendly three-row seating.",
+            "thumbnail": "https://example.com/thumbnails/toyota-highlander.jpg"
+        },
+        {
+            "title": "Subaru Forester",
+            "href": "https://example.com/car-models/subaru-forester",
+            "description": "The Subaru Forester is a compact SUV known for its standard all-wheel drive and excellent safety ratings.",
+            "thumbnail": "https://example.com/thumbnails/subaru-forester.jpg"
+        },
+        {
+            "title": "Mazda CX-9",
+            "href": "https://example.com/car-models/mazda-cx9",
+            "description": "The Mazda CX-9 is a midsize SUV known for its upscale interior and engaging driving dynamics.",
+            "thumbnail": "https://example.com/thumbnails/mazda-cx9.jpg"
+        },
+        {
+            "title": "Volkswagen Atlas",
+            "href": "https://example.com/car-models/volkswagen-atlas",
+            "description": "The Volkswagen Atlas is a midsize SUV known for its spacious three-row interior and European refinement.",
+            "thumbnail": "https://example.com/thumbnails/volkswagen-atlas.jpg"
+        },
+        {
+            "title": "Hyundai Santa Fe",
+            "href": "https://example.com/car-models/hyundai-santa-fe",
+            "description": "The Hyundai Santa Fe is a midsize SUV known for its value, warranty coverage, and modern styling.",
+            "thumbnail": "https://example.com/thumbnails/hyundai-santa-fe.jpg"
+        },
+        {
+            "title": "Kia Telluride",
+            "href": "https://example.com/car-models/kia-telluride",
+            "description": "The Kia Telluride is a midsize SUV known for its premium interior, three-row seating, and excellent warranty.",
+            "thumbnail": "https://example.com/thumbnails/kia-telluride.jpg"
+        },
+        {
+            "title": "Genesis GV70",
+            "href": "https://example.com/car-models/genesis-gv70",
+            "description": "The Genesis GV70 is a luxury compact SUV known for its sporty handling and premium interior appointments.",
+            "thumbnail": "https://example.com/thumbnails/genesis-gv70.jpg"
+        },
+        {
+            "title": "Cadillac XT5",
+            "href": "https://example.com/car-models/cadillac-xt5",
+            "description": "The Cadillac XT5 is a luxury midsize SUV known for its comfortable ride and premium technology features.",
+            "thumbnail": "https://example.com/thumbnails/cadillac-xt5.jpg"
+        },
+        {
+            "title": "Lincoln Aviator",
+            "href": "https://example.com/car-models/lincoln-aviator",
+            "description": "The Lincoln Aviator is a luxury midsize SUV known for its quiet cabin and premium amenities.",
+            "thumbnail": "https://example.com/thumbnails/lincoln-aviator.jpg"
+        },
+        {
+            "title": "Mitsubishi Outlander",
+            "href": "https://example.com/car-models/mitsubishi-outlander",
+            "description": "The Mitsubishi Outlander is a compact SUV known for its long warranty and value pricing.",
+            "thumbnail": "https://example.com/thumbnails/mitsubishi-outlander.jpg"
+        },
+        {
+            "title": "Jeep Compass",
+            "href": "https://example.com/car-models/jeep-compass",
+            "description": "The Jeep Compass is a compact SUV known for its off-road capability and distinctive Jeep styling.",
+            "thumbnail": "https://example.com/thumbnails/jeep-compass.jpg"
+        },
+        {
+            "title": "Chevrolet Tahoe",
+            "href": "https://example.com/car-models/chevrolet-tahoe",
+            "description": "The Chevrolet Tahoe is a full-size SUV known for its towing capacity and spacious three-row interior.",
+            "thumbnail": "https://example.com/thumbnails/chevrolet-tahoe.jpg"
+        },
+        {
+            "title": "Ford Expedition",
+            "href": "https://example.com/car-models/ford-expedition",
+            "description": "The Ford Expedition is a full-size SUV known for its maximum seating capacity and advanced towing features.",
+            "thumbnail": "https://example.com/thumbnails/ford-expedition.jpg"
+        },
+        {
+            "title": "GMC Yukon",
+            "href": "https://example.com/car-models/gmc-yukon",
+            "description": "The GMC Yukon is a full-size SUV known for its premium interior and impressive towing capability.",
+            "thumbnail": "https://example.com/thumbnails/gmc-yukon.jpg"
+        },
+        {
+            "title": "BMW i4",
+            "href": "https://example.com/car-models/bmw-i4",
+            "description": "The BMW i4 is an all-electric sedan known for its sporty performance and luxury interior features.",
+            "thumbnail": "https://example.com/thumbnails/bmw-i4.jpg"
+        },
+        {
+            "title": "Mercedes EQS",
+            "href": "https://example.com/car-models/mercedes-eqs",
+            "description": "The Mercedes EQS is an all-electric luxury sedan known for its impressive range and cutting-edge technology.",
+            "thumbnail": "https://example.com/thumbnails/mercedes-eqs.jpg"
+        },
+        {
+            "title": "Audi e-tron GT",
+            "href": "https://example.com/car-models/audi-e-tron-gt",
+            "description": "The Audi e-tron GT is an all-electric sports sedan known for its stunning design and impressive performance.",
+            "thumbnail": "https://example.com/thumbnails/audi-e-tron-gt.jpg"
+        },
+        {
+            "title": "Polestar 2",
+            "href": "https://example.com/car-models/polestar-2",
+            "description": "The Polestar 2 is an all-electric sedan known for its minimalist Scandinavian design and advanced technology.",
+            "thumbnail": "https://example.com/thumbnails/polestar-2.jpg"
+        },
+        {
+            "title": "Lucid Air",
+            "href": "https://example.com/car-models/lucid-air",
+            "description": "The Lucid Air is an all-electric luxury sedan known for its exceptional range and spacious interior.",
+            "thumbnail": "https://example.com/thumbnails/lucid-air.jpg"
+        },
+        {
+            "title": "Rivian R1T",
+            "href": "https://example.com/car-models/rivian-r1t",
+            "description": "The Rivian R1T is an all-electric pickup truck known for its outdoor adventure capabilities and innovative features.",
+            "thumbnail": "https://example.com/thumbnails/rivian-r1t.jpg"
+        },
+        {
+            "title": "Ford F-150 Lightning",
+            "href": "https://example.com/car-models/ford-f150-lightning",
+            "description": "The Ford F-150 Lightning is an all-electric pickup truck known for its impressive capability and home power backup features.",
+            "thumbnail": "https://example.com/thumbnails/ford-f150-lightning.jpg"
+        },
+        {
+            "title": "Chevrolet Bolt EV",
+            "href": "https://example.com/car-models/chevrolet-bolt-ev",
+            "description": "The Chevrolet Bolt EV is an all-electric hatchback known for its affordable price and practical range.",
+            "thumbnail": "https://example.com/thumbnails/chevrolet-bolt-ev.jpg"
+        },
+        {
+            "title": "Nissan Leaf",
+            "href": "https://example.com/car-models/nissan-leaf",
+            "description": "The Nissan Leaf is an all-electric hatchback known for being one of the first mass-market electric vehicles.",
+            "thumbnail": "https://example.com/thumbnails/nissan-leaf.jpg"
+        },
+        {
+            "title": "Hyundai Ioniq 5",
+            "href": "https://example.com/car-models/hyundai-ioniq-5",
+            "description": "The Hyundai Ioniq 5 is an all-electric crossover known for its futuristic design and ultra-fast charging capability.",
+            "thumbnail": "https://example.com/thumbnails/hyundai-ioniq-5.jpg"
+        },
+        {
+            "title": "Kia EV6",
+            "href": "https://example.com/car-models/kia-ev6",
+            "description": "The Kia EV6 is an all-electric crossover known for its striking design and impressive performance capabilities.",
+            "thumbnail": "https://example.com/thumbnails/kia-ev6.jpg"
         }
     ]
 }
