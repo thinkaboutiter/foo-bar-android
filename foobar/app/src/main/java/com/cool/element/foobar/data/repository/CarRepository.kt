@@ -5,12 +5,12 @@ import com.cool.element.foobar.domain.entity.application.CarApp
 import kotlin.jvm.Throws
 
 class CarRepository(
-    private val datasourceI: CarDatasourceI
+    private val datasource: CarDatasourceI
 ): CarRepositoryI {
 
     @Throws(Exception::class)
     override suspend fun fetchCars(): List<CarApp> {
-        val result = datasourceI.fetchCars().map { carNetwork ->
+        val result = datasource.fetchCars().map { carNetwork ->
             CarApp.from(carNetwork)
         }
         return result

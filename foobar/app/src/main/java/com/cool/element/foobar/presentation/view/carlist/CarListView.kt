@@ -24,14 +24,14 @@ import android.content.Context
 import com.cool.element.foobar.domain.entity.application.CarApp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
-import com.cool.element.foobar.presentation.view.carlist.viewmodel.MockCarListViewModelFactory
+import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModelFactory
 
 @Composable
 fun CarListView(
     modifier: Modifier = Modifier,
     context: Context = LocalContext.current
 ) {
-    val factory = remember { MockCarListViewModelFactory(context) }
+    val factory = remember { CarListViewModelFactory() }
     val viewModel: CarListViewModel = viewModel(factory = factory)
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }

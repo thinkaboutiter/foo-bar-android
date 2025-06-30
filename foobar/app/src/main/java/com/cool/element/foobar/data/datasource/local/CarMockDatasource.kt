@@ -1,14 +1,13 @@
-package com.cool.element.foobar.data.datasource
+package com.cool.element.foobar.data.datasource.local
 
 import android.content.Context
 import com.cool.element.foobar.R
+import com.cool.element.foobar.data.datasource.CarDatasourceI
 import com.cool.element.foobar.data.parser.CarNetworkJsonParser
 import com.cool.element.foobar.data.parser.CarNetworkJsonParserI
 import com.cool.element.foobar.domain.entity.network.CarNetwork
-import kotlin.jvm.Throws
 
-
-class MockCarDatasource(
+class CarMockDatasource(
     private val context: Context,
     private val parser: CarNetworkJsonParserI = CarNetworkJsonParser()
 ): CarDatasourceI {
@@ -18,4 +17,3 @@ class MockCarDatasource(
         return result
     }
 }
-
