@@ -2,8 +2,8 @@ package com.cool.element.foobar.presentation.view.bottomtabs
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Cloud
-import androidx.compose.material.icons.filled.Storage
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -27,11 +27,11 @@ fun BottomTabsView(
     val tabs = listOf(
         BottomTabItem(
             title = "Local Cars",
-            icon = Icons.Default.Storage
+            icon = Icons.Default.Home
         ),
         BottomTabItem(
             title = "Network Cars",
-            icon = Icons.Default.Cloud
+            icon = Icons.Default.Settings
         )
     )
 
