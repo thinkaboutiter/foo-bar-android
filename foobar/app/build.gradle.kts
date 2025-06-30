@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.coil.compose)
+    implementation(libs.androidx.navigation.compose)
 
     // networking libraries
     implementation(libs.retrofit)
