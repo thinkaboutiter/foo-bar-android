@@ -21,7 +21,7 @@ interface CarDao {
     suspend fun deleteCar(car: CarLocal)
 
     @Delete
-    suspend fun deleteAllCars()
+    suspend fun deleteCars(vararg cars: CarLocal)
 
     @Update
     suspend fun updateCar(car: CarLocal)

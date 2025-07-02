@@ -32,7 +32,7 @@ class CarLocalDatasource(
     }
 
     @Throws
-    override suspend fun deleteAllCars() {
-        carDao.deleteAllCars()
+    override suspend fun deleteCars(vararg cars: CarLocal) {
+        carDao.deleteCars()
     }
 }

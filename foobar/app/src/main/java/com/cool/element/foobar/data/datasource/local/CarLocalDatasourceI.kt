@@ -19,5 +19,5 @@ interface CarLocalDatasourceI {
     suspend fun deleteCar(car: CarLocal)
 
     @Throws(Exception::class)
-    suspend fun deleteAllCars()
+    suspend fun deleteCars(vararg cars: CarLocal)
 }
