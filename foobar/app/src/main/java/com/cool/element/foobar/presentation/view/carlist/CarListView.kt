@@ -23,15 +23,17 @@ import androidx.compose.ui.unit.dp
 import android.content.Context
 import com.cool.element.foobar.domain.entity.application.CarApp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModelFactory
 
 @Composable
 fun CarListView(
     modifier: Modifier = Modifier,
-    context: Context = LocalContext.current
+    makeRepository: (Context) -> CarRepositoryI
 ) {
-    val factory = remember { CarListViewModelFactory() }
+    val repository: CarRepositoryI = makeRepository(LocalContext.current)
+    val factory = remember { CarListViewModelFactory(repository) }
     val viewModel: CarListViewModel = viewModel(factory = factory)
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }

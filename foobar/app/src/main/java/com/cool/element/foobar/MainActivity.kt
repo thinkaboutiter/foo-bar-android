@@ -5,8 +5,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.room.Room
+import com.cool.element.foobar.data.datasource.local.CarLocalDatasource
+import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
+import com.cool.element.foobar.data.datasource.local.AppRoomDatabaseA
+import com.cool.element.foobar.data.datasource.network.CarNetworkDataSource
+import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
+import com.cool.element.foobar.data.repository.CarRepository
+import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.presentation.theme.FoobarTheme
 import com.cool.element.foobar.presentation.view.bottomtabs.BottomTabsView
 
@@ -17,7 +24,22 @@ class MainActivity : ComponentActivity() {
         setContent {
             FoobarTheme {
                 BottomTabsView(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    makeRepository = { context ->
+                        val networkDatasource: CarNetworkDatasourceI = CarNetworkDataSource()
+                        val database = Room.databaseBuilder(
+                            context,
+                            AppRoomDatabaseA::class.java,
+                            AppRoomDatabaseA.DATABASE_NAME
+                        ).build()
+                        val carDao = database.carDao()
+                        val localDatasource: CarLocalDatasourceI = CarLocalDatasource(carDao = carDao)
+                        val repository: CarRepositoryI = CarRepository(
+                            networkDatasource,
+                            localDatasource = localDatasource,
+                        )
+                        repository
+                    }
                 )
             }
         }

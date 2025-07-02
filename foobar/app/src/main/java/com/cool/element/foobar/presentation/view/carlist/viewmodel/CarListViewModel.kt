@@ -10,7 +10,7 @@ class CarListViewModel(
 
     @Throws(Exception::class)
     override suspend fun fetchCars(): List<CarApp> {
-        val result = repository.fetchCars()
+        val result = repository.getNetworkCars()
         return result
     }
 }
