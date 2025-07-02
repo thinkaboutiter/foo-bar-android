@@ -4,7 +4,7 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface CarWebServiceI {
-    @GET("Disconnecter/ba9872ace953e382b3497ba358940ca9/raw/90f9f3344b0539a71e7abcb69578c6dadb817a86/gistfile1.txt/")
+    @GET("thinkaboutiter/b10cd61de50e7451e0f17f1e73780d1e/raw/2fdfdf76ae8c849ca8a7cf04faaa11c832d10a01/gistfile1.txt/")
     suspend fun getCarNetworkResponse(): Response<CarNetworkResponse>
 
 //    @GET("cars/{id}")
