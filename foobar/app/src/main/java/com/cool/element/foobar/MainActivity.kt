@@ -27,12 +27,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     makeRepository = { context ->
                         val networkDatasource: CarNetworkDatasourceI = CarNetworkDataSource()
-                        val database = Room.databaseBuilder(
-                            context,
-                            AppRoomDatabaseA::class.java,
-                            AppRoomDatabaseA.DATABASE_NAME
-                        ).build()
-                        val carDao = database.carDao()
+                        val app = context.applicationContext as FoobarApp
+                        val carDao = app.roomDatabase.carDao()
                         val localDatasource: CarLocalDatasourceI = CarLocalDatasource(carDao = carDao)
                         val repository: CarRepositoryI = CarRepository(
                             networkDatasource,
