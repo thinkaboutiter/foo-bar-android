@@ -6,10 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
-import androidx.room.Room
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasource
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
-import com.cool.element.foobar.data.datasource.local.AppRoomDatabaseA
 import com.cool.element.foobar.data.datasource.network.CarNetworkDataSource
 import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
 import com.cool.element.foobar.data.repository.CarRepository
