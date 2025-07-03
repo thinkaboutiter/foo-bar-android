@@ -1,6 +1,7 @@
 package com.cool.element.foobar.presentation.view.networkcars
 
 import android.content.Context
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.cool.element.foobar.data.repository.CarRepositoryI
@@ -12,6 +13,9 @@ fun NetworkCarsView(
     modifier: Modifier = Modifier,
     makeRepository: (Context) -> CarRepositoryI
 ) {
+    val message = "NetworkCarsView created"
+    Log.i("UI", message)
+
     CarListView(
         modifier = modifier,
         makeRepository = makeRepository,
