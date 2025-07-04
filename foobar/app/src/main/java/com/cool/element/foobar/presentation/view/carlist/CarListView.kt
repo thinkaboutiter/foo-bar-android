@@ -21,17 +21,26 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import android.content.Context
+import android.util.Log
 import com.cool.element.foobar.domain.entity.application.CarApp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.cool.element.foobar.data.repository.CarRepositoryI
+import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModelFactory
 
 @Composable
 fun CarListView(
     modifier: Modifier = Modifier,
-    context: Context = LocalContext.current
+    makeRepository: (Context) -> CarRepositoryI,
+    strategy: RepositoryStrategy
 ) {
-    val factory = remember { CarListViewModelFactory() }
+
+    val message = "CarListView strategy=$strategy"
+    Log.i("UI", message)
+
+    val repository: CarRepositoryI = makeRepository(LocalContext.current)
+    val factory = remember { CarListViewModelFactory(repository) }
     val viewModel: CarListViewModel = viewModel(factory = factory)
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }
@@ -43,7 +52,7 @@ fun CarListView(
         isLoading = true
         errorMessage = null
         try {
-            cars = viewModel.fetchCars()
+            cars = viewModel.getCars(strategy)
         } catch (e: Exception) {
             errorMessage = e.message
         } finally {

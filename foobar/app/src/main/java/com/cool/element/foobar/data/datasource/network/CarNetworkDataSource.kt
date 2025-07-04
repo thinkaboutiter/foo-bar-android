@@ -1,13 +1,13 @@
 package com.cool.element.foobar.data.datasource.network
 
-import com.cool.element.foobar.data.datasource.CarDatasourceI
+import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
 import com.cool.element.foobar.data.datasource.network.webservice.CarWebClient
 import com.cool.element.foobar.data.datasource.network.webservice.CarWebServiceI
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 
 class CarNetworkDataSource(
     private val webService: CarWebServiceI = CarWebClient.webService
-) : CarDatasourceI {
+) : CarNetworkDatasourceI {
 
     @Throws(Exception::class)
     override suspend fun fetchCars(): List<CarNetwork> {

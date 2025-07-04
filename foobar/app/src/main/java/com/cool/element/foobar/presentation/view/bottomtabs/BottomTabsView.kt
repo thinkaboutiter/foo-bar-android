@@ -1,9 +1,8 @@
 package com.cool.element.foobar.presentation.view.bottomtabs
 
+import android.content.Context
+import com.cool.element.foobar.R
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -15,23 +14,27 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
+import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.presentation.view.localcars.LocalCarsView
 import com.cool.element.foobar.presentation.view.networkcars.NetworkCarsView
 
 @Composable
 fun BottomTabsView(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    makeRepository: (Context) -> CarRepositoryI
 ) {
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     val tabs = listOf(
         BottomTabItem(
             title = "Local Cars",
-            icon = Icons.Default.Home
+            icon = ImageVector.vectorResource(R.drawable.database_24)
         ),
         BottomTabItem(
             title = "Network Cars",
-            icon = Icons.Default.Settings
+            icon = ImageVector.vectorResource(R.drawable.cell_tower_24)
         )
     )
 
@@ -59,10 +62,12 @@ fun BottomTabsView(
     ) { paddingValues ->
         when (selectedTabIndex) {
             0 -> LocalCarsView(
-                modifier = Modifier.padding(paddingValues)
+                modifier = Modifier.padding(paddingValues),
+                makeRepository = makeRepository
             )
             1 -> NetworkCarsView(
-                modifier = Modifier.padding(paddingValues)
+                modifier = Modifier.padding(paddingValues),
+                makeRepository = makeRepository
             )
         }
     }
@@ -70,5 +75,5 @@ fun BottomTabsView(
 
 private data class BottomTabItem(
     val title: String,
-    val icon: androidx.compose.ui.graphics.vector.ImageVector
+    val icon: ImageVector
 )

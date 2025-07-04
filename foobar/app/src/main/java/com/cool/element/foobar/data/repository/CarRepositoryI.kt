@@ -3,5 +3,8 @@ import com.cool.element.foobar.domain.entity.application.CarApp
 
 interface CarRepositoryI {
     @Throws(Exception::class)
-    suspend fun fetchCars(): List<CarApp>
+    suspend fun getNetworkCars(): List<CarApp>
+
+    @Throws(Exception::class)
+    suspend fun getLocalCars(): List<CarApp>
 }
