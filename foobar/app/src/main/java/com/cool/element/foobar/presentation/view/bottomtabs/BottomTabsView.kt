@@ -1,6 +1,5 @@
 package com.cool.element.foobar.presentation.view.bottomtabs
 
-import android.content.Context
 import com.cool.element.foobar.R
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
@@ -16,14 +15,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.presentation.view.localcars.LocalCarsView
 import com.cool.element.foobar.presentation.view.networkcars.NetworkCarsView
 
 @Composable
 fun BottomTabsView(
-    modifier: Modifier = Modifier,
-    makeRepository: (Context) -> CarRepositoryI
+    modifier: Modifier = Modifier
 ) {
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
@@ -62,12 +59,10 @@ fun BottomTabsView(
     ) { paddingValues ->
         when (selectedTabIndex) {
             0 -> LocalCarsView(
-                modifier = Modifier.padding(paddingValues),
-                makeRepository = makeRepository
+                modifier = Modifier.padding(paddingValues)
             )
             1 -> NetworkCarsView(
-                modifier = Modifier.padding(paddingValues),
-                makeRepository = makeRepository
+                modifier = Modifier.padding(paddingValues)
             )
         }
     }

@@ -1,21 +1,22 @@
 package com.cool.element.foobar
 
 import android.app.Application
-import androidx.room.Room
 import com.cool.element.foobar.data.datasource.local.AppRoomDatabaseA
 import com.cool.element.foobar.domain.entity.local.CarLocal
 import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.EntryPoint
+import dagger.hilt.InstallIn
+import dagger.hilt.android.EntryPointAccessors
+import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.runBlocking
 
 @HiltAndroidApp
 class FoobarApp : Application() {
 
-    val roomDatabase by lazy {
-        Room.databaseBuilder(
-            applicationContext,
-            AppRoomDatabaseA::class.java,
-            AppRoomDatabaseA.DATABASE_NAME
-        ).build()
+    @EntryPoint
+    @InstallIn(SingletonComponent::class)
+    interface DatabaseEntryPoint {
+        fun database(): AppRoomDatabaseA
     }
 
     override fun onCreate() {
@@ -27,7 +28,10 @@ class FoobarApp : Application() {
     }
 
     private suspend fun createDatabaseRecords() {
+        val entryPoint = EntryPointAccessors.fromApplication(this, DatabaseEntryPoint::class.java)
+        val roomDatabase = entryPoint.database()
         val dao = roomDatabase.carDao()
+        
         for (i in 1..10) {
             // check for car existence
             val existingCar = dao.getCarById(i.toLong())

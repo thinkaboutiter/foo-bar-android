@@ -1,7 +1,6 @@
 package com.cool.element.foobar.presentation.view.carlist.viewmodel
 
 import android.util.Log
-import androidx.lifecycle.ViewModel
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.domain.entity.application.CarApp
