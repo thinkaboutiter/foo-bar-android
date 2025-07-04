@@ -3,9 +3,10 @@ package com.cool.element.foobar.data.repository
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
 import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
 import com.cool.element.foobar.domain.entity.application.CarApp
+import javax.inject.Inject
 import kotlin.jvm.Throws
 
-class CarRepository(
+class CarRepository @Inject constructor(
     private val networkDatasource: CarNetworkDatasourceI,
     private val localDatasource: CarLocalDatasourceI
 ): CarRepositoryI {

@@ -1,12 +1,12 @@
 package com.cool.element.foobar.data.datasource.network
 
 import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
-import com.cool.element.foobar.data.datasource.network.webservice.CarWebClient
 import com.cool.element.foobar.data.datasource.network.webservice.CarWebServiceI
 import com.cool.element.foobar.domain.entity.network.CarNetwork
+import javax.inject.Inject
 
-class CarNetworkDataSource(
-    private val webService: CarWebServiceI = CarWebClient.webService
+class CarNetworkDataSource @Inject constructor(
+    private val webService: CarWebServiceI
 ) : CarNetworkDatasourceI {
 
     @Throws(Exception::class)

@@ -2,8 +2,9 @@ package com.cool.element.foobar.data.datasource.local
 
 import com.cool.element.foobar.domain.entity.local.CarDao
 import com.cool.element.foobar.domain.entity.local.CarLocal
+import javax.inject.Inject
 
-class CarLocalDatasource(
+class CarLocalDatasource @Inject constructor(
     private val carDao: CarDao
 ) : CarLocalDatasourceI {
     @Throws
