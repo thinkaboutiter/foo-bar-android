@@ -53,18 +53,16 @@ class CarListViewModelFactoryTest {
     }
 
     @Test
-    fun `create should throw IllegalArgumentException for null modelClass`() {
+    fun `create should handle invalid ViewModel class gracefully`() {
         // Given
-        @Suppress("UNCHECKED_CAST")
-        val nullClass = null as Class<ViewModel>
+        class InvalidViewModel : ViewModel()
 
         // When & Then
         try {
-            factory.create(nullClass)
+            factory.create(InvalidViewModel::class.java)
             assertThat(false).isTrue() // Should not reach here
-        } catch (e: Exception) {
-            // Expected to throw some exception due to null class
-            assertThat(e).isNotNull()
+        } catch (e: IllegalArgumentException) {
+            assertThat(e.message).isEqualTo("Unknown ViewModel class")
         }
     }
 
@@ -87,17 +85,17 @@ class CarListViewModelFactoryTest {
     }
 
     @Test
-    fun `create should handle subclass of CarListViewModel`() {
-        // Given
-        class CarListViewModelSubclass(repository: CarRepositoryI) : CarListViewModel(repository)
-
+    fun `create should consistently create CarListViewModel instances`() {
         // When
-        val viewModel = factory.create(CarListViewModel::class.java)
+        val viewModel1 = factory.create(CarListViewModel::class.java)
+        val viewModel2 = factory.create(CarListViewModel::class.java)
 
         // Then
-        assertThat(viewModel).isInstanceOf(CarListViewModel::class.java)
-        // The factory should create CarListViewModel, not the subclass
-        assertThat(viewModel.javaClass).isEqualTo(CarListViewModel::class.java)
+        assertThat(viewModel1).isInstanceOf(CarListViewModel::class.java)
+        assertThat(viewModel2).isInstanceOf(CarListViewModel::class.java)
+        // The factory should create CarListViewModel instances
+        assertThat(viewModel1.javaClass).isEqualTo(CarListViewModel::class.java)
+        assertThat(viewModel2.javaClass).isEqualTo(CarListViewModel::class.java)
     }
 
     @Test

@@ -197,20 +197,20 @@ class CarNetworkDataSourceTest {
     }
 
     @Test
-    fun `fetchCars should handle cars with null values correctly`() = runTest {
+    fun `fetchCars should handle cars with empty values correctly`() = runTest {
         // Given
-        val carsWithNulls = listOf(
+        val carsWithEmpty = listOf(
             CarNetwork(
-                title = null,
-                aboutUrlString = null,
-                details = null,
-                imageUrlString = null
+                title = "",
+                aboutUrlString = "",
+                details = "",
+                imageUrlString = ""
             )
         )
         val response = CarNetworkResponse(
-            title = "Null Response",
+            title = "Empty Response",
             version = "1.0",
-            cars = carsWithNulls
+            cars = carsWithEmpty
         )
         val mockResponse = mockk<Response<CarNetworkResponse>>()
         coEvery { mockResponse.isSuccessful } returns true
@@ -222,10 +222,10 @@ class CarNetworkDataSourceTest {
 
         // Then
         assertThat(result).hasSize(1)
-        assertThat(result[0].title).isNull()
-        assertThat(result[0].aboutUrlString).isNull()
-        assertThat(result[0].details).isNull()
-        assertThat(result[0].imageUrlString).isNull()
+        assertThat(result[0].title).isEmpty()
+        assertThat(result[0].aboutUrlString).isEmpty()
+        assertThat(result[0].details).isEmpty()
+        assertThat(result[0].imageUrlString).isEmpty()
         
         coVerify { mockWebService.getCarNetworkResponse() }
     }

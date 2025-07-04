@@ -117,27 +117,27 @@ class CarMockNetworkDatasourceTest {
     }
 
     @Test
-    fun `fetchCars should handle cars with null values from parser`() = runTest {
+    fun `fetchCars should handle cars with empty values from parser`() = runTest {
         // Given
-        val carsWithNulls = listOf(
+        val carsWithEmpty = listOf(
             CarNetwork(
-                title = null,
-                aboutUrlString = null,
-                details = null,
-                imageUrlString = null
+                title = "",
+                aboutUrlString = "",
+                details = "",
+                imageUrlString = ""
             )
         )
-        coEvery { mockParser.parseCarModelsFromRaw(mockContext, R.raw.mockdata) } returns carsWithNulls
+        coEvery { mockParser.parseCarModelsFromRaw(mockContext, R.raw.mockdata) } returns carsWithEmpty
 
         // When
         val result = dataSource.fetchCars()
 
         // Then
         assertThat(result).hasSize(1)
-        assertThat(result[0].title).isNull()
-        assertThat(result[0].aboutUrlString).isNull()
-        assertThat(result[0].details).isNull()
-        assertThat(result[0].imageUrlString).isNull()
+        assertThat(result[0].title).isEmpty()
+        assertThat(result[0].aboutUrlString).isEmpty()
+        assertThat(result[0].details).isEmpty()
+        assertThat(result[0].imageUrlString).isEmpty()
         
         coVerify { mockParser.parseCarModelsFromRaw(mockContext, R.raw.mockdata) }
     }
