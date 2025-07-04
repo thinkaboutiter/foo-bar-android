@@ -4,8 +4,10 @@ import android.app.Application
 import androidx.room.Room
 import com.cool.element.foobar.data.datasource.local.AppRoomDatabaseA
 import com.cool.element.foobar.domain.entity.local.CarLocal
+import dagger.hilt.android.HiltAndroidApp
 import kotlinx.coroutines.runBlocking
 
+@HiltAndroidApp
 class FoobarApp : Application() {
 
     val roomDatabase by lazy {
