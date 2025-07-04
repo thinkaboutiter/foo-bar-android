@@ -262,3 +262,4 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/macos,android,kotlin,androidstudio,visualstudiocode,gradle
 claude.local.md
 unit_test_plan.md
+foobar/htmlReport
