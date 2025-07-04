@@ -102,12 +102,24 @@ dependencies {
 }
 
 // Jacoco configuration for test coverage
+tasks.withType<JacocoReport> {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
+}
+
 tasks.register<JacocoReport>("jacocoTestReport") {
     dependsOn("testDebugUnitTest")
+    
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports after running tests."
     
     reports {
         xml.required.set(true)
         html.required.set(true)
+        xml.outputLocation.set(file("${layout.buildDirectory.get()}/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"))
+        html.outputLocation.set(file("${layout.buildDirectory.get()}/reports/jacoco/jacocoTestReport/html"))
     }
     
     val fileFilter = listOf(
@@ -121,7 +133,7 @@ tasks.register<JacocoReport>("jacocoTestReport") {
         "**/android/databinding/*Binding.*"
     )
     
-    val debugTree = fileTree("${buildDir}/tmp/kotlin-classes/debug") {
+    val debugTree = fileTree("${layout.buildDirectory.get()}/tmp/kotlin-classes/debug") {
         exclude(fileFilter)
     }
     
@@ -129,7 +141,13 @@ tasks.register<JacocoReport>("jacocoTestReport") {
     
     sourceDirectories.setFrom(files(mainSrc))
     classDirectories.setFrom(files(debugTree))
-    executionData.setFrom(fileTree(buildDir) {
+    
+    // Set execution data
+    val execFiles = fileTree(layout.buildDirectory.get()) {
         include("jacoco/testDebugUnitTest.exec")
-    })
+        include("outputs/unit_test_code_coverage/debugUnitTest/testDebugUnitTest.exec")
+        include("jacoco/*.exec")
+    }
+    
+    executionData.setFrom(execFiles.files.filter { it.exists() })
 }
