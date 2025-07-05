@@ -17,11 +17,15 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import com.cool.element.foobar.presentation.view.localcars.LocalCarsView
 import com.cool.element.foobar.presentation.view.networkcars.NetworkCarsView
+import com.cool.element.foobar.data.repository.CarRepositoryI
+import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 
 @Composable
 fun BottomTabsView(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    repository: CarRepositoryI
 ) {
+    val viewModel = remember { CarListViewModel(repository) }
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     val tabs = listOf(
@@ -59,10 +63,12 @@ fun BottomTabsView(
     ) { paddingValues ->
         when (selectedTabIndex) {
             0 -> LocalCarsView(
-                modifier = Modifier.padding(paddingValues)
+                modifier = Modifier.padding(paddingValues),
+                viewModel = viewModel
             )
             1 -> NetworkCarsView(
-                modifier = Modifier.padding(paddingValues)
+                modifier = Modifier.padding(paddingValues),
+                viewModel = viewModel
             )
         }
     }

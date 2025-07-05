@@ -21,20 +21,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import android.util.Log
 import com.cool.element.foobar.domain.entity.application.CarApp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 
 @Composable
 fun CarListView(
     modifier: Modifier = Modifier,
-    strategy: RepositoryStrategy
+    strategy: RepositoryStrategy,
+    viewModel: CarListViewModel
 ) {
 
     val message = "CarListView strategy=$strategy"
     Log.i("UI", message)
-
-    val viewModel: CarListViewModel = hiltViewModel()
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }

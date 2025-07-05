@@ -8,17 +8,18 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.Modifier
 import com.cool.element.foobar.presentation.theme.FoobarTheme
 import com.cool.element.foobar.presentation.view.bottomtabs.BottomTabsView
-import dagger.hilt.android.AndroidEntryPoint
-
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        
+        val app = application as FoobarApp
+        
         setContent {
             FoobarTheme {
                 BottomTabsView(
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize(),
+                    repository = app.repository
                 )
             }
         }
