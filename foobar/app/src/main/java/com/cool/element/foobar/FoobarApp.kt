@@ -11,19 +11,19 @@ import com.cool.element.foobar.data.datasource.network.webservice.CarWebServiceI
 import com.cool.element.foobar.data.repository.CarRepository
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.domain.entity.local.CarLocal
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class FoobarApp : Application() {
 
     // Manual DI - create dependencies manually
-    val gson: Gson by lazy {
-        GsonBuilder().setLenient().create()
+    val json: Json by lazy {
+        Json { ignoreUnknownKeys = true }
     }
 
     val okHttpClient: OkHttpClient by lazy {
@@ -38,7 +38,7 @@ class FoobarApp : Application() {
         Retrofit.Builder()
             .baseUrl("https://gist.githubusercontent.com/")
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
             .build()
     }
 
