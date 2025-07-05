@@ -2,6 +2,7 @@ package com.cool.element.foobar.integration
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.cool.element.foobar.data.parser.CarNetworkJsonParser
+import com.cool.element.foobar.data.repository.CarRepository
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
@@ -11,8 +12,6 @@ import com.cool.element.foobar.domain.entity.local.CarLocal
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 import com.google.common.truth.Truth.assertThat
-import dagger.hilt.android.testing.HiltAndroidRule
-import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.coEvery
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -24,34 +23,25 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import javax.inject.Inject
+import io.mockk.mockk
 
-@HiltAndroidTest
 @ExperimentalCoroutinesApi
 class DataFlowIntegrationTest {
 
     @get:Rule
-    var hiltRule = HiltAndroidRule(this)
-
-    @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    @Inject
-    lateinit var repository: CarRepositoryI
-
-    @Inject
-    lateinit var mockNetworkDatasource: CarNetworkDatasourceI
-
-    @Inject
-    lateinit var mockLocalDatasource: CarLocalDatasourceI
+    private lateinit var repository: CarRepository
+    private val mockNetworkDatasource: CarNetworkDatasourceI = mockk()
+    private val mockLocalDatasource: CarLocalDatasourceI = mockk()
 
     private lateinit var viewModel: CarListViewModel
     private val testDispatcher = TestCoroutineDispatcher()
 
     @Before
     fun setup() {
-        hiltRule.inject()
         Dispatchers.setMain(testDispatcher)
+        repository = CarRepository(mockNetworkDatasource, mockLocalDatasource)
         viewModel = CarListViewModel(repository)
     }
 

@@ -5,8 +5,6 @@ import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.domain.entity.application.CarApp
 import com.google.common.truth.Truth.assertThat
-import dagger.hilt.android.testing.HiltAndroidRule
-import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import kotlinx.coroutines.Dispatchers
@@ -20,20 +18,15 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import javax.inject.Inject
+import io.mockk.mockk
 
-@HiltAndroidTest
 @ExperimentalCoroutinesApi
 class CarListViewModelTest {
 
     @get:Rule
-    var hiltRule = HiltAndroidRule(this)
-
-    @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    @Inject
-    lateinit var mockRepository: CarRepositoryI
+    private val mockRepository: CarRepositoryI = mockk()
 
     private lateinit var viewModel: CarListViewModel
     private val testDispatcher = TestCoroutineDispatcher()
@@ -41,7 +34,6 @@ class CarListViewModelTest {
 
     @Before
     fun setup() {
-        hiltRule.inject()
         Dispatchers.setMain(testDispatcher)
         viewModel = CarListViewModel(mockRepository)
     }
