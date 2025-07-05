@@ -6,6 +6,7 @@ import com.google.gson.Gson
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import java.io.ByteArrayInputStream
 import java.io.IOException
@@ -13,11 +14,12 @@ import java.io.IOException
 class CarNetworkJsonParserTest {
 
     private lateinit var parser: CarNetworkJsonParser
+
     private val mockGson: Gson = mockk()
 
     @Before
     fun setup() {
-        parser = CarNetworkJsonParser(mockGson)
+        parser = CarNetworkJsonParser(Gson())
     }
 
     @Test
@@ -45,10 +47,9 @@ class CarNetworkJsonParserTest {
         """.trimIndent()
 
         // Use real Gson for this test
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromString(jsonString)
+        val result = parser.parseCarModelsFromString(jsonString)
 
         // Then
         assertThat(result).hasSize(2)
@@ -74,10 +75,9 @@ class CarNetworkJsonParserTest {
             }
         """.trimIndent()
 
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromString(jsonString)
+        val result = parser.parseCarModelsFromString(jsonString)
 
         // Then
         assertThat(result).isEmpty()
@@ -101,10 +101,9 @@ class CarNetworkJsonParserTest {
             }
         """.trimIndent()
 
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromString(jsonString)
+        val result = parser.parseCarModelsFromString(jsonString)
 
         // Then
         assertThat(result).hasSize(1)
@@ -132,10 +131,9 @@ class CarNetworkJsonParserTest {
             }
         """.trimIndent()
 
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromString(jsonString)
+        val result = parser.parseCarModelsFromString(jsonString)
 
         // Then
         assertThat(result).hasSize(1)
@@ -163,10 +161,9 @@ class CarNetworkJsonParserTest {
             }
         """.trimIndent()
 
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromString(jsonString)
+        val result = parser.parseCarModelsFromString(jsonString)
 
         // Then
         assertThat(result).hasSize(1)
@@ -195,10 +192,9 @@ class CarNetworkJsonParserTest {
         """.trimIndent()
 
         val inputStream = ByteArrayInputStream(jsonString.toByteArray())
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromStream(inputStream)
+        val result = parser.parseCarModelsFromStream(inputStream)
 
         // Then
         assertThat(result).hasSize(1)
@@ -213,11 +209,10 @@ class CarNetworkJsonParserTest {
         // Given
         val malformedJson = "{ invalid json structure"
 
-        val realParser = CarNetworkJsonParser()
 
         // When & Then
         try {
-            realParser.parseCarModelsFromString(malformedJson)
+            parser.parseCarModelsFromString(malformedJson)
             assertThat(false).isTrue() // Should not reach here
         } catch (e: Exception) {
             assertThat(e).isNotNull()
@@ -234,11 +229,10 @@ class CarNetworkJsonParserTest {
             }
         """.trimIndent()
 
-        val realParser = CarNetworkJsonParser()
 
         // When & Then
         try {
-            val result = realParser.parseCarModelsFromString(invalidJson)
+            val result = parser.parseCarModelsFromString(invalidJson)
             // Gson may succeed but return null results
             assertThat(result).isNull()
         } catch (e: Exception) {
@@ -251,11 +245,10 @@ class CarNetworkJsonParserTest {
     fun `parseCarModelsFromStream should handle empty stream gracefully`() {
         // Given
         val emptyStream = ByteArrayInputStream(byteArrayOf())
-        val realParser = CarNetworkJsonParser()
 
         // When & Then
         try {
-            val result = realParser.parseCarModelsFromStream(emptyStream)
+            val result = parser.parseCarModelsFromStream(emptyStream)
             // May return null or empty result
             assertThat(result).isNull()
         } catch (e: Exception) {
@@ -286,10 +279,9 @@ class CarNetworkJsonParserTest {
             }
         """.trimIndent()
 
-        val realParser = CarNetworkJsonParser()
 
         // When
-        val result = realParser.parseCarModelsFromString(jsonString)
+        val result = parser.parseCarModelsFromString(jsonString)
 
         // Then
         assertThat(result).hasSize(100)

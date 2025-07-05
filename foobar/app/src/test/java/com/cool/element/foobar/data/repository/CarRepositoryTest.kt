@@ -8,10 +8,11 @@ import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
+import io.mockk.mockk
 
 class CarRepositoryTest {
 

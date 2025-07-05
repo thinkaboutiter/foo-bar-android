@@ -17,31 +17,24 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import android.content.Context
 import android.util.Log
 import com.cool.element.foobar.domain.entity.application.CarApp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.cool.element.foobar.data.repository.CarRepositoryI
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
-import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModelFactory
 
 @Composable
 fun CarListView(
     modifier: Modifier = Modifier,
-    makeRepository: (Context) -> CarRepositoryI,
     strategy: RepositoryStrategy
 ) {
 
     val message = "CarListView strategy=$strategy"
     Log.i("UI", message)
 
-    val repository: CarRepositoryI = makeRepository(LocalContext.current)
-    val factory = remember { CarListViewModelFactory(repository) }
-    val viewModel: CarListViewModel = viewModel(factory = factory)
+    val viewModel: CarListViewModel = hiltViewModel()
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }

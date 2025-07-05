@@ -10,13 +10,15 @@ import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 
 class CarMockNetworkDatasourceTest {
 
     private lateinit var dataSource: CarMockNetworkDatasource
-    private val mockContext: Context = mockk()
     private val mockParser: CarNetworkJsonParserI = mockk()
+
+    private val mockContext: Context = mockk()
 
     @Before
     fun setup() {

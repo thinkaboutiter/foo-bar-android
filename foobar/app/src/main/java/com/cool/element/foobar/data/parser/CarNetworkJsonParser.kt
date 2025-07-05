@@ -6,12 +6,13 @@ import androidx.annotation.RawRes
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
+import javax.inject.Inject
 
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.cool.element.foobar.domain.entity.network.CarNetworkResponse
 
-class CarNetworkJsonParser(
-    private val gson: Gson = Gson()
+class CarNetworkJsonParser @Inject constructor(
+    private val gson: Gson
 ) : CarNetworkJsonParserI {
 
     @Throws(IOException::class)

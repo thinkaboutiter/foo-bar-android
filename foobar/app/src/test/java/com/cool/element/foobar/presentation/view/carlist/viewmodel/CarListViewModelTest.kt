@@ -7,7 +7,6 @@ import com.cool.element.foobar.domain.entity.application.CarApp
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -19,6 +18,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import io.mockk.mockk
 
 @ExperimentalCoroutinesApi
 class CarListViewModelTest {
@@ -26,8 +26,9 @@ class CarListViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private lateinit var viewModel: CarListViewModel
     private val mockRepository: CarRepositoryI = mockk()
+
+    private lateinit var viewModel: CarListViewModel
     private val testDispatcher = TestCoroutineDispatcher()
     private val testScope = TestCoroutineScope(testDispatcher)
 

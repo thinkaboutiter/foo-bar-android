@@ -3,6 +3,7 @@ package com.cool.element.foobar.integration
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.cool.element.foobar.data.parser.CarNetworkJsonParser
 import com.cool.element.foobar.data.repository.CarRepository
+import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
 import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
@@ -12,7 +13,6 @@ import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 import com.google.common.truth.Truth.assertThat
 import io.mockk.coEvery
-import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -23,6 +23,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import io.mockk.mockk
 
 @ExperimentalCoroutinesApi
 class DataFlowIntegrationTest {
@@ -31,9 +32,10 @@ class DataFlowIntegrationTest {
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var repository: CarRepository
-    private lateinit var viewModel: CarListViewModel
     private val mockNetworkDatasource: CarNetworkDatasourceI = mockk()
     private val mockLocalDatasource: CarLocalDatasourceI = mockk()
+
+    private lateinit var viewModel: CarListViewModel
     private val testDispatcher = TestCoroutineDispatcher()
 
     @Before
@@ -200,7 +202,7 @@ class DataFlowIntegrationTest {
             }
         """.trimIndent()
 
-        val parser = CarNetworkJsonParser()
+        val parser = CarNetworkJsonParser(com.google.gson.Gson())
 
         // When
         val result = parser.parseCarModelsFromString(jsonString)

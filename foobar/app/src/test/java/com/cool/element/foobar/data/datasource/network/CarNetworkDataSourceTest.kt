@@ -9,12 +9,14 @@ import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import retrofit2.Response
 
 class CarNetworkDataSourceTest {
 
     private lateinit var dataSource: CarNetworkDataSource
+
     private val mockWebService: CarWebServiceI = mockk()
 
     @Before
