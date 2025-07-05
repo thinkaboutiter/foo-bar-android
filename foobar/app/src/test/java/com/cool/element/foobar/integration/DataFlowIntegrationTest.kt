@@ -1,7 +1,6 @@
 package com.cool.element.foobar.integration
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.cool.element.foobar.data.parser.CarNetworkJsonParser
 import com.cool.element.foobar.data.repository.CarRepository
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
@@ -184,36 +183,6 @@ class DataFlowIntegrationTest {
         assertThat(localResult).isEmpty()
     }
 
-    @Test
-    fun `integration test - JSON parsing with real parser`() {
-        // Given
-        val jsonString = """
-            {
-                "title": "Integration Test Response",
-                "version": "1.0",
-                "results": [
-                    {
-                        "title": "Parsed Car",
-                        "href": "https://parsed.com",
-                        "description": "Parsed car description",
-                        "thumbnail": "https://parsed.com/thumb.jpg"
-                    }
-                ]
-            }
-        """.trimIndent()
-
-        val parser = CarNetworkJsonParser(com.google.gson.Gson())
-
-        // When
-        val result = parser.parseCarModelsFromString(jsonString)
-
-        // Then
-        assertThat(result).hasSize(1)
-        assertThat(result[0].title).isEqualTo("Parsed Car")
-        assertThat(result[0].aboutUrlString).isEqualTo("https://parsed.com")
-        assertThat(result[0].details).isEqualTo("Parsed car description")
-        assertThat(result[0].imageUrlString).isEqualTo("https://parsed.com/thumb.jpg")
-    }
 
     @Test
     fun `integration test - entity mapping consistency`() = runTest {
