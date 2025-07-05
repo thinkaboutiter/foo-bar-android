@@ -14,12 +14,13 @@ import retrofit2.Response
 
 class CarNetworkDataSourceTest {
 
-    private lateinit var dataSource: CarNetworkDataSource
+    private lateinit var dataSource: CarNetworkDatasource
+
     private val mockWebService: CarWebServiceI = mockk()
 
     @Before
     fun setup() {
-        dataSource = CarNetworkDataSource(mockWebService)
+        dataSource = CarNetworkDatasource(mockWebService)
     }
 
     @Test

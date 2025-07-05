@@ -1,6 +1,5 @@
 package com.cool.element.foobar.presentation.view.bottomtabs
 
-import android.content.Context
 import com.cool.element.foobar.R
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
@@ -16,24 +15,27 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
-import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.presentation.view.localcars.LocalCarsView
 import com.cool.element.foobar.presentation.view.networkcars.NetworkCarsView
+import com.cool.element.foobar.data.repository.CarRepositoryI
+import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
+import com.cool.element.foobar.utils.Constants
 
 @Composable
 fun BottomTabsView(
     modifier: Modifier = Modifier,
-    makeRepository: (Context) -> CarRepositoryI
+    repository: CarRepositoryI
 ) {
+    val viewModel = remember { CarListViewModel(repository) }
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     val tabs = listOf(
         BottomTabItem(
-            title = "Local Cars",
+            title = Constants.UI.TAB_LOCAL_CARS,
             icon = ImageVector.vectorResource(R.drawable.database_24)
         ),
         BottomTabItem(
-            title = "Network Cars",
+            title = Constants.UI.TAB_NETWORK_CARS,
             icon = ImageVector.vectorResource(R.drawable.cell_tower_24)
         )
     )
@@ -63,11 +65,11 @@ fun BottomTabsView(
         when (selectedTabIndex) {
             0 -> LocalCarsView(
                 modifier = Modifier.padding(paddingValues),
-                makeRepository = makeRepository
+                viewModel = viewModel
             )
             1 -> NetworkCarsView(
                 modifier = Modifier.padding(paddingValues),
-                makeRepository = makeRepository
+                viewModel = viewModel
             )
         }
     }

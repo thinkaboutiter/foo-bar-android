@@ -1,10 +1,12 @@
 package com.cool.element.foobar.domain.entity.network
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class CarNetwork(
     val title: String,
-    @SerializedName("href") val aboutUrlString: String,
-    @SerializedName("description") val details: String,
-    @SerializedName("thumbnail") val imageUrlString: String,
+    @SerialName("href") val aboutUrlString: String,
+    @SerialName("description") val details: String,
+    @SerialName("thumbnail") val imageUrlString: String,
 )

@@ -5,7 +5,7 @@ import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
 import com.cool.element.foobar.domain.entity.application.CarApp
 import kotlin.jvm.Throws
 
-class CarRepository(
+class CarRepository constructor(
     private val networkDatasource: CarNetworkDatasourceI,
     private val localDatasource: CarLocalDatasourceI
 ): CarRepositoryI {

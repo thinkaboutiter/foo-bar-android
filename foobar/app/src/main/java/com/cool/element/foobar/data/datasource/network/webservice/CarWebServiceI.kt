@@ -1,10 +1,11 @@
 package com.cool.element.foobar.data.datasource.network.webservice
 import com.cool.element.foobar.domain.entity.network.CarNetworkResponse
+import com.cool.element.foobar.utils.Constants
 import retrofit2.Response
 import retrofit2.http.*
 
 interface CarWebServiceI {
-    @GET("thinkaboutiter/b10cd61de50e7451e0f17f1e73780d1e/raw/2fdfdf76ae8c849ca8a7cf04faaa11c832d10a01/gistfile1.txt/")
+    @GET(Constants.Network.API_ENDPOINT)
     suspend fun getCarNetworkResponse(): Response<CarNetworkResponse>
 
 //    @GET("cars/{id}")
