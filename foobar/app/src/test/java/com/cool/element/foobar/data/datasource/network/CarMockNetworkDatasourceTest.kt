@@ -5,22 +5,34 @@ import com.cool.element.foobar.R
 import com.cool.element.foobar.data.parser.CarNetworkJsonParserI
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.google.common.truth.Truth.assertThat
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
+import javax.inject.Inject
 
+@HiltAndroidTest
 class CarMockNetworkDatasourceTest {
 
-    private lateinit var dataSource: CarMockNetworkDatasource
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @Inject
+    lateinit var dataSource: CarNetworkDatasourceI
+
+    @Inject
+    lateinit var mockParser: CarNetworkJsonParserI
+
     private val mockContext: Context = mockk()
-    private val mockParser: CarNetworkJsonParserI = mockk()
 
     @Before
     fun setup() {
-        dataSource = CarMockNetworkDatasource(mockContext, mockParser)
+        hiltRule.inject()
     }
 
     @Test

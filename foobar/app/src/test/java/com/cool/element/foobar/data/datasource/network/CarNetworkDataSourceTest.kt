@@ -4,22 +4,32 @@ import com.cool.element.foobar.data.datasource.network.webservice.CarWebServiceI
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.cool.element.foobar.domain.entity.network.CarNetworkResponse
 import com.google.common.truth.Truth.assertThat
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import retrofit2.Response
+import javax.inject.Inject
 
+@HiltAndroidTest
 class CarNetworkDataSourceTest {
 
-    private lateinit var dataSource: CarNetworkDataSource
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @Inject
+    lateinit var dataSource: CarNetworkDatasourceI
+
     private val mockWebService: CarWebServiceI = mockk()
 
     @Before
     fun setup() {
-        dataSource = CarNetworkDataSource(mockWebService)
+        hiltRule.inject()
     }
 
     @Test

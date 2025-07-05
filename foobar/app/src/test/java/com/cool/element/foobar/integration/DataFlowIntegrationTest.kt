@@ -2,7 +2,7 @@ package com.cool.element.foobar.integration
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.cool.element.foobar.data.parser.CarNetworkJsonParser
-import com.cool.element.foobar.data.repository.CarRepository
+import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
 import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
@@ -11,8 +11,9 @@ import com.cool.element.foobar.domain.entity.local.CarLocal
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
 import com.google.common.truth.Truth.assertThat
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.coEvery
-import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
@@ -23,23 +24,34 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import javax.inject.Inject
 
+@HiltAndroidTest
 @ExperimentalCoroutinesApi
 class DataFlowIntegrationTest {
 
     @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+
+    @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private lateinit var repository: CarRepository
+    @Inject
+    lateinit var repository: CarRepositoryI
+
+    @Inject
+    lateinit var mockNetworkDatasource: CarNetworkDatasourceI
+
+    @Inject
+    lateinit var mockLocalDatasource: CarLocalDatasourceI
+
     private lateinit var viewModel: CarListViewModel
-    private val mockNetworkDatasource: CarNetworkDatasourceI = mockk()
-    private val mockLocalDatasource: CarLocalDatasourceI = mockk()
     private val testDispatcher = TestCoroutineDispatcher()
 
     @Before
     fun setup() {
+        hiltRule.inject()
         Dispatchers.setMain(testDispatcher)
-        repository = CarRepository(mockNetworkDatasource, mockLocalDatasource)
         viewModel = CarListViewModel(repository)
     }
 
@@ -200,7 +212,7 @@ class DataFlowIntegrationTest {
             }
         """.trimIndent()
 
-        val parser = CarNetworkJsonParser()
+        val parser = CarNetworkJsonParser(com.google.gson.Gson())
 
         // When
         val result = parser.parseCarModelsFromString(jsonString)
