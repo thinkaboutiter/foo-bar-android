@@ -2,9 +2,7 @@ package com.cool.element.foobar.data.datasource.network
 
 import com.cool.element.foobar.data.datasource.network.webservice.CarWebServiceI
 import com.cool.element.foobar.domain.entity.network.CarNetwork
-import javax.inject.Inject
-
-class CarNetworkDatasource @Inject constructor(
+class CarNetworkDatasource constructor(
     private val webService: CarWebServiceI
 ) : CarNetworkDatasourceI {
 

@@ -4,12 +4,9 @@ import android.util.Log
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.domain.entity.application.CarApp
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 import kotlin.jvm.Throws
 
-@HiltViewModel
-class CarListViewModel @Inject constructor(
+class CarListViewModel constructor(
     private val repository: CarRepositoryI,
 ) : CarListViewModelA() {
 
