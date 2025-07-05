@@ -19,6 +19,7 @@ import com.cool.element.foobar.presentation.view.localcars.LocalCarsView
 import com.cool.element.foobar.presentation.view.networkcars.NetworkCarsView
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
+import com.cool.element.foobar.utils.Constants
 
 @Composable
 fun BottomTabsView(
@@ -30,11 +31,11 @@ fun BottomTabsView(
 
     val tabs = listOf(
         BottomTabItem(
-            title = "Local Cars",
+            title = Constants.UI.TAB_LOCAL_CARS,
             icon = ImageVector.vectorResource(R.drawable.database_24)
         ),
         BottomTabItem(
-            title = "Network Cars",
+            title = Constants.UI.TAB_NETWORK_CARS,
             icon = ImageVector.vectorResource(R.drawable.cell_tower_24)
         )
     )

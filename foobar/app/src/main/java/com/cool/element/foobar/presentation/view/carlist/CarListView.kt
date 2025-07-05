@@ -23,6 +23,7 @@ import android.util.Log
 import com.cool.element.foobar.domain.entity.application.CarApp
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
+import com.cool.element.foobar.utils.Constants
 
 @Composable
 fun CarListView(
@@ -32,7 +33,7 @@ fun CarListView(
 ) {
 
     val message = "CarListView strategy=$strategy"
-    Log.i("UI", message)
+    Log.i(Constants.UI.LOG_TAG_UI, message)
 
     var cars by remember { mutableStateOf<List<CarApp>>(emptyList()) }
     var isLoading by remember { mutableStateOf(false) }
@@ -69,7 +70,7 @@ fun CarListView(
 
             errorMessage != null -> {
                 Text(
-                    text = "Error: $errorMessage",
+                    text = "${Constants.UI.ERROR_PREFIX}$errorMessage",
                     color = Color.Red,
                     modifier = Modifier.padding(16.dp)
                 )

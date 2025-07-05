@@ -6,6 +6,7 @@ import androidx.compose.ui.Modifier
 import com.cool.element.foobar.data.repository.RepositoryStrategy
 import com.cool.element.foobar.presentation.view.carlist.CarListView
 import com.cool.element.foobar.presentation.view.carlist.viewmodel.CarListViewModel
+import com.cool.element.foobar.utils.Constants
 
 @Composable
 fun NetworkCarsView(
@@ -13,7 +14,7 @@ fun NetworkCarsView(
     viewModel: CarListViewModel
 ) {
     val message = "NetworkCarsView created"
-    Log.i("UI", message)
+    Log.i(Constants.UI.LOG_TAG_UI, message)
 
     CarListView(
         modifier = modifier,

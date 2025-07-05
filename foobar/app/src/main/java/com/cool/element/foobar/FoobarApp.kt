@@ -11,6 +11,7 @@ import com.cool.element.foobar.data.datasource.network.webservice.CarWebServiceI
 import com.cool.element.foobar.data.repository.CarRepository
 import com.cool.element.foobar.data.repository.CarRepositoryI
 import com.cool.element.foobar.domain.entity.local.CarLocal
+import com.cool.element.foobar.utils.Constants
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
@@ -22,11 +23,11 @@ import retrofit2.Retrofit
 class FoobarApp : Application() {
 
     // Manual DI - create dependencies manually
-    val json: Json by lazy {
+    private val json: Json by lazy {
         Json { ignoreUnknownKeys = true }
     }
 
-    val okHttpClient: OkHttpClient by lazy {
+    private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
@@ -34,33 +35,33 @@ class FoobarApp : Application() {
             .build()
     }
 
-    val retrofit: Retrofit by lazy {
+    private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("https://gist.githubusercontent.com/")
+            .baseUrl(Constants.Network.BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+            .addConverterFactory(json.asConverterFactory(Constants.Network.CONTENT_TYPE_JSON.toMediaType()))
             .build()
     }
 
-    val webService: CarWebServiceI by lazy {
+    private val webService: CarWebServiceI by lazy {
         retrofit.create(CarWebServiceI::class.java)
     }
 
-    val database: AppRoomDatabaseA by lazy {
+    private val database: AppRoomDatabaseA by lazy {
         Room.databaseBuilder(
             this,
             AppRoomDatabaseA::class.java,
-            "foobar_database"
+            Constants.Database.NAME
         )
             .fallbackToDestructiveMigration(true)
             .build()
     }
 
-    val networkDatasource: CarNetworkDatasourceI by lazy {
+    private val networkDatasource: CarNetworkDatasourceI by lazy {
         CarNetworkDatasource(webService)
     }
 
-    val localDatasource: CarLocalDatasourceI by lazy {
+    private val localDatasource: CarLocalDatasourceI by lazy {
         CarLocalDatasource(database.carDao())
     }
 
@@ -77,7 +78,7 @@ class FoobarApp : Application() {
         runBlocking {
             val dao = database.carDao()
             
-            for (i in 1..10) {
+            for (i in 1..Constants.MockData.MOCK_CARS_COUNT) {
                 // check for car existence
                 val existingCar = dao.getCarById(i.toLong())
                 if (existingCar != null) {
@@ -86,10 +87,10 @@ class FoobarApp : Application() {
 
                 val car = CarLocal(
                     i.toLong(),
-                    "DB Car $i",
-                    "http",
-                    "${2020 + i}",
-                    "${4000 + 1}"
+                    "${Constants.MockData.CAR_TITLE_PREFIX} $i",
+                    Constants.MockData.CAR_URL_PREFIX,
+                    "${Constants.MockData.CAR_YEAR_BASE + i}",
+                    "${Constants.MockData.CAR_PRICE_BASE + 1}"
                 )
                 dao.insertCar(car)
             }
