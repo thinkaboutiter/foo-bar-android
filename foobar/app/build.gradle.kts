@@ -53,12 +53,15 @@ android {
         unitTests {
             isIncludeAndroidResources = true
             isReturnDefaultValues = true
-        }
-    }
-    
-    buildTypes {
-        debug {
-            enableUnitTestCoverage = true
+            
+            // Add JVM arguments to suppress ByteBuddy warnings
+            all {
+                it.jvmArgs(
+                    "-XX:+EnableDynamicAgentLoading",
+                    "--add-opens=java.base/java.lang=ALL-UNNAMED",
+                    "--add-opens=java.base/java.util=ALL-UNNAMED"
+                )
+            }
         }
     }
 }
