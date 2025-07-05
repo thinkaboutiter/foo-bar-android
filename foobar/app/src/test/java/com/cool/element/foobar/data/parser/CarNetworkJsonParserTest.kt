@@ -3,8 +3,6 @@ package com.cool.element.foobar.data.parser
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.google.common.truth.Truth.assertThat
 import com.google.gson.Gson
-import dagger.hilt.android.testing.HiltAndroidRule
-import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Before
@@ -12,22 +10,16 @@ import org.junit.Rule
 import org.junit.Test
 import java.io.ByteArrayInputStream
 import java.io.IOException
-import javax.inject.Inject
 
-@HiltAndroidTest
 class CarNetworkJsonParserTest {
 
-    @get:Rule
-    var hiltRule = HiltAndroidRule(this)
-
-    @Inject
-    lateinit var parser: CarNetworkJsonParserI
+    private lateinit var parser: CarNetworkJsonParser
 
     private val mockGson: Gson = mockk()
 
     @Before
     fun setup() {
-        hiltRule.inject()
+        parser = CarNetworkJsonParser(Gson())
     }
 
     @Test

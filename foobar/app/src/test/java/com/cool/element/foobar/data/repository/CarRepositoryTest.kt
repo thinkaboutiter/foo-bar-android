@@ -6,34 +6,26 @@ import com.cool.element.foobar.domain.entity.application.CarApp
 import com.cool.element.foobar.domain.entity.local.CarLocal
 import com.cool.element.foobar.domain.entity.network.CarNetwork
 import com.google.common.truth.Truth.assertThat
-import dagger.hilt.android.testing.HiltAndroidRule
-import dagger.hilt.android.testing.HiltAndroidTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import javax.inject.Inject
+import io.mockk.mockk
 
-@HiltAndroidTest
 class CarRepositoryTest {
 
-    @get:Rule
-    var hiltRule = HiltAndroidRule(this)
-
-    @Inject
-    lateinit var repository: CarRepositoryI
-
-    @Inject
-    lateinit var mockNetworkDatasource: CarNetworkDatasourceI
-
-    @Inject
-    lateinit var mockLocalDatasource: CarLocalDatasourceI
+    private lateinit var repository: CarRepository
+    private val mockNetworkDatasource: CarNetworkDatasourceI = mockk()
+    private val mockLocalDatasource: CarLocalDatasourceI = mockk()
 
     @Before
     fun setup() {
-        hiltRule.inject()
+        repository = CarRepository(
+            networkDatasource = mockNetworkDatasource,
+            localDatasource = mockLocalDatasource
+        )
     }
 
     @Test

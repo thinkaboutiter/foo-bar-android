@@ -2,7 +2,7 @@ package com.cool.element.foobar.di
 
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasource
 import com.cool.element.foobar.data.datasource.local.CarLocalDatasourceI
-import com.cool.element.foobar.data.datasource.network.CarNetworkDataSource
+import com.cool.element.foobar.data.datasource.network.CarNetworkDatasource
 import com.cool.element.foobar.data.datasource.network.CarNetworkDatasourceI
 import com.cool.element.foobar.data.parser.CarNetworkJsonParser
 import com.cool.element.foobar.data.parser.CarNetworkJsonParserI
@@ -25,7 +25,7 @@ abstract class DataSourceModule {
     @Binds
     @Singleton
     abstract fun bindCarNetworkDataSource(
-        carNetworkDataSource: CarNetworkDataSource
+        carNetworkDataSource: CarNetworkDatasource
     ): CarNetworkDatasourceI
 
     @Binds
